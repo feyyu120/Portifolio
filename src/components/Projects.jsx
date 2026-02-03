@@ -1,6 +1,6 @@
 export default function Projects() {
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="section" style={{backgroundColor:"rgb(158, 158, 150)"}}>
       <h2>Projects</h2>
 
       <div className="projects">
@@ -32,6 +32,26 @@ export default function Projects() {
         >
           <h3>React Native To-Do App</h3>
           <p>No backend</p>
+        </a>
+
+         <a
+          href="https://github.com/feyyu120/CSE-ASTU-Dev-BootCamp"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="card"
+        >
+          <h3>Bootcamp development projects</h3>
+          <p>using MERN</p>
+        </a>
+        
+        <a
+          href="https://github.com/feyyu120/NCC_MSJ"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="card"
+        >
+          <h3>Different problem solving(CP)</h3>
+          <p>using pyhton and c++ </p>
         </a>
       </div>
     </section>

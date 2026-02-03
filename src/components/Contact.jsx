@@ -1,24 +1,35 @@
+import { BsTelegram } from "react-icons/bs";
+import { TfiEmail } from "react-icons/tfi";
+import { FaGithub } from "react-icons/fa";
+
+
 export default function Contact() {
   return (
     <section id="contact" className="section">
       <h2>Contact Me</h2>
-
-      <p>
-        Email:{" "}
-        <a href="mailto:feyselfeyyu@gmail.com" style={{textDecoration:"none", color:"gray"}}>
-          feyselfeyyu@gmail.com
+       <div className="media"> 
+     
+        <a href="mailto:feyselfeyyu@gmail.com"  target="_blank"
+          rel="noopener noreferrer" style={{textDecoration:"none" ,fontSize:20}}>
+         <TfiEmail className="icon" />
         </a>
-      </p>
-
-      <p>
-        GitHub:{" "}
+    
         <a
-          href="https://github.com/feyyu120"
-        style={{textDecoration:"none", color:"gray"}}
+          href="https://github.com/feyyu120"  target="_blank"
+          rel="noopener noreferrer"
+        style={{textDecoration:"none",fontSize:20}}
         >
-          github.com/feyyu120
+         <FaGithub className="icon"/>
         </a>
-      </p>
+
+          <a
+          href="https://t.me/feyyu2"   target="_blank"
+          rel="noopener noreferrer"
+        style={{textDecoration:"none",fontSize:20}}
+        >
+       <BsTelegram className="icon"/>
+        </a>
+      </div>
     </section>
   );
 }
