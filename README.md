@@ -1,8 +1,9 @@
-# React + Vite
 
-You can check the webpage it's deployed in Netlify
+# You can check the webpage it's live now!
 
-https://feyyuportifolio.netlify.app
+https://portifolio-alpha-eight-57.vercel.app/
 
-About the web:
-I built this using react and css file
+
+## TeckStack
+  ### React + Vite
+  ### Tailwind css
