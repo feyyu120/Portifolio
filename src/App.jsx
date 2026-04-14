@@ -167,7 +167,7 @@ function App() {
 
             {/* Profile Image - Fixed Size on PC + Good on Mobile */}
             <div className="flex justify-center md:justify-end">
-              <div className="relative w-full max-w-[290px] sm:max-w-[340px] md:max-w-[330px] lg:max-w-[410px]">
+              <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[330px] lg:max-w-[410px]">
                 <div className="absolute -inset-8 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-full blur-3xl opacity-30"></div>
                 <img
                   src={profile}
