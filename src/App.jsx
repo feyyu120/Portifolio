@@ -112,12 +112,14 @@ function App() {
         )}
       </nav>
 
-      {/* HERO */}
+           {/* HERO */}
       <section id="home" className="min-h-screen pt-28 pb-16 flex items-center bg-gradient-to-br from-black to-zinc-950">
         <div className="max-w-screen-2xl mx-auto px-6 md:px-8">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            {/* Left Text Content */}
             <div className="space-y-8 text-center md:text-left">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-[-3px] text-white">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-[-3px] text-white">
                 Full-Stack <span className="text-emerald-400 block">Developer</span>
               </h1>
 
@@ -163,9 +165,9 @@ function App() {
               </div>
             </div>
 
-            {/* Profile Image - Centered properly on mobile */}
+            {/* Profile Image - Fixed Size on PC + Good on Mobile */}
             <div className="flex justify-center md:justify-end">
-              <div className="relative w-full max-w-[340px] md:max-w-none">
+              <div className="relative w-full max-w-[290px] sm:max-w-[340px] md:max-w-[330px] lg:max-w-[410px]">
                 <div className="absolute -inset-8 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-full blur-3xl opacity-30"></div>
                 <img
                   src={profile}
@@ -175,6 +177,7 @@ function App() {
                 <div className="absolute inset-0 border-[6px] border-emerald-400/40 rounded-full -rotate-12 scale-110 pointer-events-none"></div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
