@@ -3,12 +3,12 @@ import profile from "./assets/profile3.png";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 
-import { 
-  FaGithub, FaInstagram, FaTelegramPlane, FaEnvelope, 
-  FaLaptopCode, FaServer, FaCode, FaJava, FaDatabase
+import {
+  FaGithub, FaInstagram, FaTelegramPlane, FaEnvelope,
+  FaLaptopCode, FaServer, FaCode, FaJava, FaDatabase, FaLeaf
 } from 'react-icons/fa';
-import { 
-  SiReact, SiNodedotjs, SiExpress, SiPython, SiCplusplus, SiHtml5, SiCss 
+import {
+  SiReact, SiNodedotjs, SiExpress, SiPython, SiCplusplus, SiHtml5, SiCss
 } from 'react-icons/si';
 
 function App() {
@@ -44,7 +44,10 @@ function App() {
   }, []);
 
   const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
     setIsMenuOpen(false);
   };
 
@@ -92,6 +95,7 @@ function App() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-x-10 text-base font-medium">
             <button onClick={() => scrollToSection('home')} className={`pb-1 border-b-2 transition-all duration-200 ${activeSection === 'home' ? 'border-emerald-400 text-emerald-400' : 'border-transparent hover:text-emerald-400'}`}>Home</button>
+            <button onClick={() => scrollToSection('about')} className={`pb-1 border-b-2 transition-all duration-200 ${activeSection === 'about' ? 'border-emerald-400 text-emerald-400' : 'border-transparent hover:text-emerald-400'}`}>About</button>
             <button onClick={() => scrollToSection('skills')} className={`pb-1 border-b-2 transition-all duration-200 ${activeSection === 'skills' ? 'border-emerald-400 text-emerald-400' : 'border-transparent hover:text-emerald-400'}`}>Skills</button>
             <button onClick={() => scrollToSection('projects')} className={`pb-1 border-b-2 transition-all duration-200 ${activeSection === 'projects' ? 'border-emerald-400 text-emerald-400' : 'border-transparent hover:text-emerald-400'}`}>Projects</button>
             <button onClick={() => scrollToSection('contact')} className={`pb-1 border-b-2 transition-all duration-200 ${activeSection === 'contact' ? 'border-emerald-400 text-emerald-400' : 'border-transparent hover:text-emerald-400'}`}>Contact</button>
@@ -105,6 +109,7 @@ function App() {
         {isMenuOpen && (
           <div className="md:hidden bg-black border-t border-emerald-500/30 py-6 px-8 flex flex-col gap-6 text-lg">
             <button onClick={() => scrollToSection('home')} className="text-left hover:text-emerald-400">Home</button>
+            <button onClick={() => scrollToSection('about')} className="text-left hover:text-emerald-400">About</button>
             <button onClick={() => scrollToSection('skills')} className="text-left hover:text-emerald-400">Skills</button>
             <button onClick={() => scrollToSection('projects')} className="text-left hover:text-emerald-400">Projects</button>
             <button onClick={() => scrollToSection('contact')} className="text-left hover:text-emerald-400">Contact</button>
@@ -112,11 +117,11 @@ function App() {
         )}
       </nav>
 
-           {/* HERO */}
+      {/* HERO */}
       <section id="home" className="min-h-screen pt-28 pb-16 flex items-center bg-gradient-to-br from-black to-zinc-950">
         <div className="max-w-screen-2xl mx-auto px-6 md:px-8">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left Text Content */}
             <div className="space-y-8 text-center md:text-left">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-[-3px] text-white">
@@ -150,8 +155,8 @@ function App() {
               </div>
 
               <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
-                <button 
-                  onClick={() => scrollToSection('contact')} 
+                <button
+                  onClick={() => scrollToSection('contact')}
                   className="group flex items-center gap-4 bg-emerald-500 hover:bg-emerald-600 text-black font-semibold text-xl md:text-2xl px-10 py-6 rounded-3xl transition-all hover:scale-105 w-full sm:w-auto"
                 >
                   Let's Connect
@@ -168,16 +173,89 @@ function App() {
             {/* Profile Image - Fixed Size on PC + Good on Mobile */}
             <div className="flex justify-center md:justify-end">
               <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[330px] lg:max-w-[410px]">
-                <div className="absolute -inset-8 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-full blur-3xl opacity-30"></div>
+                <div className="absolute -inset-10 bg-emerald-500/20 blur-[100px] rounded-full"></div>
                 <img
                   src={profile}
                   alt="Feysel Yassin"
-                  className="w-full h-auto aspect-square object-cover rounded-full border-[6px] border-emerald-400 shadow-2xl shadow-emerald-500/50 relative z-10"
+                  className="w-full h-auto aspect-square object-cover rounded-full border-[4px] border-emerald-500/30 shadow-2xl shadow-emerald-500/20 relative z-10 transition-all hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 border-[6px] border-emerald-400/40 rounded-full -rotate-12 scale-110 pointer-events-none"></div>
+                <div className="absolute -inset-2 border-2 border-emerald-500/20 rounded-full -rotate-3 pointer-events-none"></div>
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="py-20 md:py-24 bg-black">
+        <div className="max-w-screen-2xl mx-auto px-6 md:px-8">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-emerald-500/10 blur-2xl rounded-3xl"></div>
+              <div className="relative bg-zinc-900/50 border border-emerald-500/20 p-8 md:p-12 rounded-[2.5rem] backdrop-blur-sm">
+                <h2 className="text-4xl md:text-5xl font-bold mb-8">
+                  About <span className="text-emerald-400">Me</span>
+                </h2>
+                <div className="space-y-6 text-zinc-300 text-lg md:text-xl leading-relaxed">
+                  <p>
+                    I am a passionate Full-Stack Developer with a strong foundation in building modern web and mobile applications.
+                    My journey in technology is driven by a desire to create impactful digital experiences that solve real-world problems.
+                  </p>
+                  <p>
+                    I am a detail-oriented developer who values clean code and seamless user experiences. I am always eager to learn new technologies and improve my skills to deliver high-quality solutions.
+                  </p>
+                  <div className="pt-6 grid grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="text-emerald-400 font-bold text-2xl">2+</h4>
+                      <p className="text-zinc-500 text-sm">Years Experience</p>
+                    </div>
+                    <div>
+                      <h4 className="text-emerald-400 font-bold text-2xl">5+</h4>
+                      <p className="text-zinc-500 text-sm">Projects Completed</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div className="bg-zinc-900/30 border border-emerald-500/10 p-8 rounded-3xl hover:border-emerald-500/30 transition-colors">
+                <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                  <div className="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+                    <FaCode className="text-emerald-400" />
+                  </div>
+                  My Mission
+                </h3>
+                <p className="text-zinc-400">
+                  To build scalable, user-centric applications that bridge the gap between complex technology and intuitive user experience.
+                </p>
+              </div>
+
+              <div className="bg-zinc-900/30 border border-emerald-500/10 p-8 rounded-3xl hover:border-emerald-500/30 transition-colors">
+                <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3">
+                  <div className="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+                    <FaLaptopCode className="text-emerald-400" />
+                  </div>
+                  What I Do
+                </h3>
+                <p className="text-zinc-400">
+                  Specializing in React, Node.js, and Mobile development, I bring ideas to life from concept to deployment.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -187,7 +265,7 @@ function App() {
         <div className="max-w-screen-2xl mx-auto px-6 md:px-8">
           <div className="text-center mb-16">
             <span className="px-5 py-2 bg-emerald-900/50 text-emerald-400 text-sm font-mono tracking-[3px] rounded-full">TECHNICAL EXPERTISE</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-6">What I Build With</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mt-6">Skills and Technologies I Use</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -283,14 +361,31 @@ function App() {
               </div>
               <div className="p-8">
                 <h3 className="text-3xl font-semibold mb-3">E-Commerce App</h3>
-                <p className="text-zinc-400 mb-8 line-clamp-3">Full-featured online store with cart, payments, and mobile support.</p>
+                <p className="text-zinc-400 mb-8 line-clamp-3">Full-featured online store with cart, payments, AI integration and mobile support.</p>
                 <div className="flex gap-2 flex-wrap mb-8">
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiReact /> React</span>
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiReact /> React Native</span>
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiNodedotjs /> Node.js</span>
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiExpress /> Express.js</span>
                 </div>
-                <a href="https://github.com/feyyu120/Abdu_Student_Delivery-E-commerce-" target="_blank" className="block w-full py-5 text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black font-semibold rounded-2xl transition-all">View GitHub Repo →</a>
+                <a href="https://github.com/feyyu120/E-commerce-APP" target="_blank" className="block w-full py-5 text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black font-semibold rounded-2xl transition-all">View GitHub Repo →</a>
+              </div>
+            </div>
+
+            <div className="group bg-zinc-900 rounded-3xl overflow-hidden border border-transparent hover:border-emerald-400 transition-all">
+              <div className="h-64 bg-gradient-to-br from-emerald-950 to-black flex items-center justify-center">
+                <FaLeaf size={100} className="text-emerald-400 group-hover:scale-110 transition-transform" />
+              </div>
+              <div className="p-8">
+                <h3 className="text-3xl font-semibold mb-3">Fertilizer Distribution System</h3>
+                <p className="text-zinc-400 mb-8 line-clamp-3">Help farmers get fertilizer fairly and without challenge with proper delivery and an AI assistant for guidance.</p>
+                <div className="flex gap-2 flex-wrap mb-8">
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiReact /> React</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiNodedotjs /> Node.js</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiExpress /> Express.js</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><FaCode /> AI Assistant</span>
+                </div>
+                <a href="https://github.com/feyyu120/fertilizer-distribution" target="_blank" className="block w-full py-5 text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black font-semibold rounded-2xl transition-all">View GitHub Repo →</a>
               </div>
             </div>
           </div>
@@ -344,7 +439,7 @@ function App() {
             {/* Contact Form */}
             <div className="bg-zinc-900 rounded-3xl p-8 md:p-10 border border-emerald-400/20">
               <h3 className="text-3xl font-semibold mb-8 text-emerald-400">Send Me a Message</h3>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <input
                   type="text"
