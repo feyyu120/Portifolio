@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 import {
   FaGithub, FaInstagram, FaTelegramPlane, FaEnvelope,
-  FaLaptopCode, FaServer, FaCode, FaJava, FaDatabase, FaLeaf
+  FaLaptopCode, FaServer, FaCode, FaJava, FaDatabase, FaLeaf, FaCalendarAlt
 } from 'react-icons/fa';
 import {
-  SiReact, SiNodedotjs, SiExpress, SiPython, SiCplusplus, SiHtml5, SiCss
+  SiReact, SiNodedotjs, SiExpress, SiPython, SiCplusplus, SiHtml5, SiCss, SiMongodb
 } from 'react-icons/si';
 
 function App() {
@@ -322,6 +322,7 @@ function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Project Cards remain the same but with better mobile padding */}
+            {/* Project 1: Lost & Found */}
             <div className="group bg-zinc-900 rounded-3xl overflow-hidden border border-transparent hover:border-emerald-400 transition-all">
               <div className="h-64 bg-gradient-to-br from-emerald-950 to-black flex items-center justify-center">
                 <FaLaptopCode size={100} className="text-emerald-400 group-hover:scale-110 transition-transform" />
@@ -333,12 +334,32 @@ function App() {
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiReact /> React Native</span>
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiNodedotjs /> Node.js</span>
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiExpress /> Express.js</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiMongodb /> MongoDB</span>
                 </div>
                 <a href="https://github.com/feyyu120/ASTU_Student" target="_blank" className="block w-full py-5 text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black font-semibold rounded-2xl transition-all">View GitHub Repo →</a>
               </div>
             </div>
 
-            {/* Repeat for other two projects (same structure) */}
+            {/* Project 2: Fertilizer Distribution */}
+            <div className="group bg-zinc-900 rounded-3xl overflow-hidden border border-transparent hover:border-emerald-400 transition-all">
+              <div className="h-64 bg-gradient-to-br from-emerald-950 to-black flex items-center justify-center">
+                <FaLeaf size={100} className="text-emerald-400 group-hover:scale-110 transition-transform" />
+              </div>
+              <div className="p-8">
+                <h3 className="text-3xl font-semibold mb-3">Fertilizer Distribution System</h3>
+                <p className="text-zinc-400 mb-8 line-clamp-3">Help farmers get fertilizer fairly and without challenge with proper delivery and an AI assistant for guidance.</p>
+                <div className="flex gap-2 flex-wrap mb-8">
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiReact /> React</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiNodedotjs /> Node.js</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiExpress /> Express.js</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiMongodb /> MongoDB</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><FaCode /> AI Assistant</span>
+                </div>
+                <a href="https://github.com/feyyu120/fertilizer-distribution" target="_blank" className="block w-full py-5 text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black font-semibold rounded-2xl transition-all">View GitHub Repo →</a>
+              </div>
+            </div>
+
+            {/* Project 3: AI Chatbot */}
             <div className="group bg-zinc-900 rounded-3xl overflow-hidden border border-transparent hover:border-emerald-400 transition-all">
               <div className="h-64 bg-gradient-to-br from-cyan-950 to-black flex items-center justify-center">
                 <FaTelegramPlane size={100} className="text-emerald-400 group-hover:scale-110 transition-transform" />
@@ -350,11 +371,13 @@ function App() {
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiReact /> React</span>
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiNodedotjs /> Node.js</span>
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiExpress /> Express.js</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiMongodb /> MongoDB</span>
                 </div>
                 <a href="https://github.com/feyyu120/ChatBot" target="_blank" className="block w-full py-5 text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black font-semibold rounded-2xl transition-all">View GitHub Repo →</a>
               </div>
             </div>
 
+            {/* Project 4: E-Commerce */}
             <div className="group bg-zinc-900 rounded-3xl overflow-hidden border border-transparent hover:border-emerald-400 transition-all">
               <div className="h-64 bg-gradient-to-br from-amber-950 to-black flex items-center justify-center">
                 <FaLaptopCode size={100} className="text-emerald-400 group-hover:scale-110 transition-transform" />
@@ -367,25 +390,27 @@ function App() {
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiReact /> React Native</span>
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiNodedotjs /> Node.js</span>
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiExpress /> Express.js</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiMongodb /> MongoDB</span>
                 </div>
                 <a href="https://github.com/feyyu120/E-commerce-APP" target="_blank" className="block w-full py-5 text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black font-semibold rounded-2xl transition-all">View GitHub Repo →</a>
               </div>
             </div>
 
+            {/* Project 5: Campus Event */}
             <div className="group bg-zinc-900 rounded-3xl overflow-hidden border border-transparent hover:border-emerald-400 transition-all">
-              <div className="h-64 bg-gradient-to-br from-emerald-950 to-black flex items-center justify-center">
-                <FaLeaf size={100} className="text-emerald-400 group-hover:scale-110 transition-transform" />
+              <div className="h-64 bg-gradient-to-br from-purple-950 to-black flex items-center justify-center">
+                <FaCalendarAlt size={100} className="text-emerald-400 group-hover:scale-110 transition-transform" />
               </div>
               <div className="p-8">
-                <h3 className="text-3xl font-semibold mb-3">Fertilizer Distribution System</h3>
-                <p className="text-zinc-400 mb-8 line-clamp-3">Help farmers get fertilizer fairly and without challenge with proper delivery and an AI assistant for guidance.</p>
+                <h3 className="text-3xl font-semibold mb-3">Campus Event Hub</h3>
+                <p className="text-zinc-400 mb-8 line-clamp-3">Helps students stay informed about internships, scholarships, and other useful campus events through a mobile app.</p>
                 <div className="flex gap-2 flex-wrap mb-8">
-                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiReact /> React</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiReact /> React Native</span>
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiNodedotjs /> Node.js</span>
                   <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiExpress /> Express.js</span>
-                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><FaCode /> AI Assistant</span>
+                  <span className="px-6 py-3 bg-black rounded-2xl flex items-center gap-2"><SiMongodb /> MongoDB</span>
                 </div>
-                <a href="https://github.com/feyyu120/fertilizer-distribution" target="_blank" className="block w-full py-5 text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black font-semibold rounded-2xl transition-all">View GitHub Repo →</a>
+                <a href="https://github.com/feyyu120/University-Event-Opportunity-Hub" target="_blank" className="block w-full py-5 text-center bg-zinc-800 hover:bg-emerald-500 hover:text-black font-semibold rounded-2xl transition-all">View GitHub Repo →</a>
               </div>
             </div>
           </div>
